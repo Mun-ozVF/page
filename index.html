@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Registro de Usuario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="CSS/estilo.css" />
+    <script src="Script.js" defer></script>
+  </head>
+  <body>
+    <div class="principal">
+      <form method="get" name="registro" id="formRegistro" action="index.html">
+        <!-- Nombre -->
+        <label for="nombre">Nombre:</label>
+        <input class="cajas" type="text" name="nombre" id="nombre" required />
+        <br /><br />
+
+        <!-- Edad -->
+        <label for="edad">Edad:</label>
+        <input
+          class="cajas"
+          type="number"
+          name="edad"
+          id="edad"
+          min="1"
+          required
+        />
+        <br /><br />
+
+        <!-- Selección de sexo -->
+        <fieldset>
+          <legend>Selecciona tu sexo:</legend>
+          <label for="femenino">
+            <input
+              class="cajas"
+              type="radio"
+              name="sexo"
+              id="femenino"
+              value="femenino"
+              required
+            />
+            Femenino
+          </label>
+          <label for="masculino">
+            <input
+              class="cajas"
+              type="radio"
+              name="sexo"
+              id="masculino"
+              value="masculino"
+              required
+            />
+            Masculino
+          </label>
+        </fieldset>
+        <br />
+
+        <!-- Deporte favorito -->
+        <label for="deporte">Deporte favorito:</label>
+        <select id="deporte" name="deporte" required>
+          <option value="" disabled selected>Seleccione una opción</option>
+          <option value="futbol">Fútbol</option>
+          <option value="basquetbol">Básquetbol</option>
+          <option value="beisbol">Béisbol</option>
+          <option value="tenis">Tenis</option>
+          <option value="ninguno">Ninguno</option>
+        </select>
+        <br /><br />
+
+        <!-- Botones -->
+        <input class="boton" type="submit" id="enviar" value="Enviar" />
+        <input class="boton" type="reset" id="reset" value="Restablecer" />
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("formRegistro")
+        .addEventListener("submit", function (event) {
+          if (!validar(this)) {
+            event.preventDefault(); // Evita el envío si la validación falla
+          }
+        });
+    </script>
+  </body>
+</html>
