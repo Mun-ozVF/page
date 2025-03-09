@@ -16,7 +16,7 @@ function validar(form) {
   // Validar nombre (sin etiquetas ni caracteres especiales)
   var nombre = form.nombre.value.trim();
   if (nombre === "" || hasHtmlTags(nombre)) {
-    alert("FATAL ERROR. Considere eliminar System32/");
+    alert("Valores ingresados prohibidos");
     return false;
   }
   nombre = sanitizeInput(nombre); // Aplicar sanitización
